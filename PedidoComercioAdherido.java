@@ -10,6 +10,12 @@ public class PedidoComercioAdherido {
     }
 
     public BigDecimal calcularTotal() {
+	BigDecimal total=BigDecimal.ZERO;
+	
+	for (DetallPedido detallePedido : detalle){
+		total = total.add(detallePedido.calcularSubtotal());
+	}
+
         return total;
     }
 }
